@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='jquery-3.4.1.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <title>{% block title %}{% endblock %} - My Webpage</title>
+    {% endblock %}
+</head>
+<body>
+	<header>
+		{% block header %}
+		<a class="title" onclick="click('home')"><p>Home</p></a>
+		<a class="title" onclick="click('pages')"><p>Pages</p></a>
+		<a class="title" onclick="click('about')"><p>About</p></a>
+		{% endblock %}
+	</header>
+	<div id="left" class="main">
+		
+	</div>
+	<div id="content" class="main">
+		{% block content %}{% endblock %}
+	</div>
+	<div id="right" class="main">
+		
+	</div>
+	<footer>
+		{% block footer %}
+		<div></div>
+		{% endblock %}
+	</footer>
+	<script>
+		{% block script %}
+		{% endblock %}
+	</script>
+</body>
+</html>
