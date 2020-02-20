@@ -1,16 +1,15 @@
 $(function(){
-	var stable = 0
+	$(".title").click(function(){
+		switch($(this).text()){
+			case "Home":
+				alert(1);
+				break;
+			case "Pages":
+				alert(2);
+				break;
+			case "About":
+				alert(3);
+				break;
+		}
+	})
 })
-
-function click(name){
-	if(name != "home" && name != "pages" && name != "about")
-		name = "home"
-	switch(name){
-		case "home":
-		alert("1")
-		case "pages":
-		alert("2")
-		case "about":
-		alert("3")
-	}
-}

@@ -1,18 +1,23 @@
+/*@font-face {
+	font-family: 
+}*/
+
 * {
 	margin: 0px;
 	padding: 0px;
 }
 
 html {
-	background: #f3f3f3;
-	text-align: center;
+	font-family: Calibri;
+	background: #F3F3F3;
 	height: 100%;
 	width: 100%;
 }
 
 body {
-	height: 100%;
-	width: 100%;
+	margin: 0px auto;
+	height: 99%;
+	width: 95%;
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: space-between;
@@ -21,13 +26,21 @@ body {
 
 header, footer {
 	background-color: #FCDA90;
+	text-align: center;
+	display: flex;
+	justify-content: space-around;
+	font-size: 1.5em;
+	color: #86741E;
 	height: 5%;
 	width: 100%;
 }
 
-header {
-	display: flex;
-	justify-content: space-around;
+div#content div.line {
+	background-color: #EEF1B9;
+}
+
+div.main, header, footer {
+	box-shadow: 5px 5px 0px #B3ACAC;
 }
 
 div.main {
@@ -37,13 +50,40 @@ div.main {
 }
 
 div#content {
-	background-color: #FFFFFF;
+	background-color: #7F7E7E;
+	text-align: center;
+	font-size: 2em;
+	color: #EEF1B9;
 	width: 77%;
 }
 
 div#left, div#right {
 	background-color: #F6EF8C;
 	width: 10%;
+}
+
+form {
+	border-style: dashed;
+	border-width: 2px;
+	border-color: #555555;
+	margin: 0px auto;
+	width: 35%;
+}
+
+input[type="text"], input[type="password"] {
+	background-color: #7E7E7E;
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 5%;
+	border-color: #555555;
+}
+
+input[type="button"] {
+	background-color: #AF35E2;
+	border-style: none;
+	margin: 0px auto;
+	width: 20%;
+	color: #EFF3A5;
 }
 
 .title {

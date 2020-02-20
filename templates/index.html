@@ -2,6 +2,7 @@
 <html>
 <head>
 	{% block head %}
+	<meta charset="utf-8">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <script src="{{ url_for('static', filename='jquery-3.4.1.min.js') }}"></script>
     <script src="{{ url_for('static', filename='script.js') }}"></script>
@@ -11,9 +12,9 @@
 <body>
 	<header>
 		{% block header %}
-		<a class="title" onclick="click('home')"><p>Home</p></a>
-		<a class="title" onclick="click('pages')"><p>Pages</p></a>
-		<a class="title" onclick="click('about')"><p>About</p></a>
+		<a class="title"><strong>Home</strong></a>
+		<a class="title"><strong>Pages</strong></a>
+		<a class="title"><strong>About</strong></a>
 		{% endblock %}
 	</header>
 	<div id="left" class="main">
@@ -27,7 +28,7 @@
 	</div>
 	<footer>
 		{% block footer %}
-		<div></div>
+		<p>Made by 12hydrogen. Power by Flask. Copyright 2020</p>
 		{% endblock %}
 	</footer>
 	<script>
