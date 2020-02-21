@@ -1,6 +1,6 @@
 # singlePythonBlog
 
-This, which is created for studying, is a blog writen by Python.
+This, which is created for studying, is a blog written by Python.
 Started long ago, and will be complete soon.
 
 # Environment
