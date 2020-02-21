@@ -63,7 +63,8 @@ div#left, div#right {
 }
 
 form {
-	border-style: dashed;
+	background-color: #959595;
+	border-style: solid;
 	border-width: 2px;
 	border-color: #555555;
 	margin: 0px auto;
@@ -83,7 +84,7 @@ input[type="button"] {
 	border-style: none;
 	margin: 0px auto;
 	width: 20%;
-	color: #EFF3A5;
+	color: #;
 }
 
 .title {

@@ -2,13 +2,13 @@ $(function(){
 	$(".title").click(function(){
 		switch($(this).text()){
 			case "Home":
-				alert(1);
+				window.location.href = '/home'
 				break;
 			case "Pages":
-				alert(2);
+				window.location.href = '/pages'
 				break;
 			case "About":
-				alert(3);
+				window.location.href = '/about'
 				break;
 		}
 	})

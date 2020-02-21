@@ -1,90 +1,10 @@
-{% extends "index.html" %}
+{% extends 'index.html' %}
 {% block title %}Mainpage{% endblock %}
 {% block head %}
 {{ super() }}
-<style>
-#content * {
-	position: relative;
-	top: 5%;
-}
-#content div.line {
-	height: 2px;
-	width: 80%;
-	margin: 0 auto;
-	opacity: 0.7;
-}
-#content div.linewhole {
-	background-color: #F3F3F3;
-	top: 12%;
-	height: 5px;
-	width: 101%;
-}
-#content div.linewhole#shadow {
-	background-color: #B3ACAC;
-	width: 100%;
-	left: 5px;
-	margin-top: -5px;
-}
-#content div.linewhole#last {
-	background-color: #7F7E7E;
-	width: 100%;
-	margin-top: -5px;
-}
-#content div.linewhole#last+p {
-	margin: 0px auto;
-	width: 80%;
-	top: 15%;
-}
-p#status {
-	font-size: 0.6em;
-}
-</style>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='frontpage.css') }}">
 <script type="text/javascript" src="{{ url_for('static', filename='sha256.min.js') }}"></script>
-<script type="text/javascript">
-$(function(){
-	$("p.first").next().css("top", "16%");
-	$("p.first").next().nextAll().css("top", "17%");
-	var d = new Date();
-	var t = d.getTime();
-	$.post("{{ url_for('logincheck') }}", {"timestamp": t}, function(data, status){
-		if (data["timestamp"] > t){
-			switch(data["status"]){
-				case "accept":
-				$("p#status").html("Congratulate for successfully loged in!<br/>Hi, " + data['user'] + "!");
-				break;
-				case "refused":
-				$("p#status").html("Emmm... the username or password seems wrong...<br/>Check again, please, " + data['user'] + "!");
-				break;
-				case "error":
-				$("p#status").html("It seems like we've got something wrong here...<br/>Cannot find your login status, a bug, I suppose.");
-				break;
-			}
-		}
-	});
-	$("input[value='Login']").click(function(){
-		u = $("input[name='username']").val();
-		p = sha256($("input[name='password']").val());
-		d = new Date();
-		t = d.getTime();
-		h = sha256(u + p + t);
-		$.post("{{ url_for('logincheck') }}", {"username": u, "password": p, "timestamp": t, "hash": h}, function(data, status){
-			if (data["timestamp"] > t){
-				switch(data["status"]){
-					case "accept":
-					$("p#status").html("Congratulate for successfully loged in!<br/>Hi, " + data['user'] + "!");
-					break;
-					case "refused":
-					$("p#status").html("Emmm... the username or password seems wrong...<br/>Check again, please, " + data['user'] + "!");
-					break;
-					case "error":
-					$("p#status").html("It seems like we've got something wrong here...<br/>Cannot find your login status, a bug, I suppose.");
-					break;
-				}
-			}
-		});
-	});
-});
-</script>
+<script type="text/javascript" src="{{ url_for('static', filename='frontpage.js') }}"></script>
 {% endblock %}
 {% block content %}
 <h1>Welcome!</h1>
