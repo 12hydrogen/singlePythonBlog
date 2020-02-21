@@ -111,14 +111,14 @@ def database(name='*', method='get', table='users', column=['username', 'passwor
 	db = sqlite3.connect('test.db')
 	cursor = db.cursor()
 	if method == 'get':
-		cursor.execute('select {} from {}'.format(name, table))
+		cursor.execute('select {} from {};'.format(name, table))
 		b = cursor.fetchall()
 		db.close()
 		return b
 	elif method == 'put' and len(column) == len(value):
 		try:
 			cursor.execute('''insert into {}({})
-			value ({})'''.format(table, li(column), li(value)))
+			value ({});'''.format(table, li(column), li(value)))
 			db.commit()
 			db.close()
 			return 'ok'
